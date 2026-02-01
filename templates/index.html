@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liver Steatosis Segmentation</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Liver Steatosis Segmentation</h1>
+    <p>Deep Learning Based Medical Image Analysis</p>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required>
+        <button type="submit">Segment Image</button>
+    </form>
+
+    {% if output_image %}
+    <div class="result">
+        <h2>Segmented Output</h2>
+
+        <div class="image-row">
+            <div class="image-box">
+                <h3>Original Ultrasound Image</h3>
+                <img src="{{ original_image }}" alt="Original Image">
+                <p>
+                    This image shows the raw ultrasound scan of the liver,
+                    which is used as input for steatosis analysis.
+                </p>
+            </div>
+
+            <div class="image-box">
+                <h3>Segmented Liver Region</h3>
+                <img src="{{ output_image }}" alt="Segmented Image">
+                <p>
+                    Highlighted red areas represent regions with increased
+                    echogenicity, indicating potential fatty infiltration
+                    (steatosis) within the liver tissue.
+                </p>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
