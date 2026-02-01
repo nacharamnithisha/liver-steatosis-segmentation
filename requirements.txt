@@ -1,6 +1,8 @@
-flask
-tensorflow
-opencv-python
-numpy
-Pillow
+python_version<3.11
+flask==2.3.3
+tensorflow==2.12.0
+keras==2.12.0
+numpy==1.23.5
+opencv-python-headless
+pillow
 gunicorn
